@@ -1,0 +1,196 @@
+*{
+    margin:0;
+    padding:0;
+  }
+  body{
+    font-family:arial,sans-serif;
+    font-size:100%;
+    margin:1em;
+    background:#666;
+    color:#fff;
+  }
+  h2,p{
+    font-size:100%;
+    font-weight:normal;
+  }
+  ul,li{
+    list-style:none;
+  }
+  ul{
+    overflow:hidden;
+    padding:3em;
+  }
+  ul li a{
+    text-decoration:none;
+    color:#000;
+    background:#ffc;
+    display:block;
+    height:10em;
+    width:10em;
+    padding:1em;
+    -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+    -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+    box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+    -moz-transition:-moz-transform .15s linear;
+    -o-transition:-o-transform .15s linear;
+    -webkit-transition:-webkit-transform .15s linear;
+  }
+  ul li{
+    margin:1em;
+    float:left;
+  }
+  ul li h2{
+    font-size:140%;
+    font-weight:bold;
+    padding-bottom:10px;
+  }
+  ul li p{
+    font-family:"Reenie Beanie",arial,sans-serif;
+    font-size:100%;
+  }
+  ul li a{
+    -webkit-transform: rotate(-6deg);
+    -o-transform: rotate(-6deg);
+    -moz-transform:rotate(-6deg);
+  }
+  ul li:nth-child(even) a{
+    -o-transform:rotate(4deg);
+    -webkit-transform:rotate(4deg);
+    -moz-transform:rotate(4deg);
+    position:relative;
+    top:5px;
+    background:#cfc;
+  }
+  ul li:nth-child(3n) a{
+    -o-transform:rotate(-3deg);
+    -webkit-transform:rotate(-3deg);
+    -moz-transform:rotate(-3deg);
+    position:relative;
+    top:-5px;
+    background:#ccf;
+  }
+  ul li:nth-child(5n) a{
+    -o-transform:rotate(5deg);
+    -webkit-transform:rotate(5deg);
+    -moz-transform:rotate(5deg);
+    position:relative;
+    top:-10px;
+  }
+  ul li a:hover,ul li a:focus{
+    box-shadow:10px 10px 7px rgba(0,0,0,.7);
+    -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+    -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+    -webkit-transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    -o-transform: scale(1.25);
+    position:relative;
+    z-index:5;
+  }
+  ol{text-align:center;}
+  ol li{display:inline;padding-right:1em;}
+  ol li a{color:#fff;}
+  
+
+  @import 'https://fonts.googleapis.com/css?family=Anton';
+
+.skew-button {
+  /* position: absolute; */
+  left: 50%;
+  top: 50%;
+}
+.skew-button {
+  cursor: pointer;
+  outline: none;
+  transform: translate3d(-50%, -50%, 0);
+  backface-visibility: hidden;
+  /* position: relative; */
+  display: inline-block;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  font: 1.3rem 'Anton', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #fff;
+}
+.skew-button span {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 20px 50px;
+  z-index: 3;
+}
+.skew-button:before, .skew-button span:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) skewX(-20deg);
+  width: 100%;
+  height: 50px;
+  border: 1px solid #0e3876;
+  z-index: 2;
+}
+.skew-button span:before {
+  display: block;
+  transform: translate(-50%, -50%) skew(-20deg);
+  transform-origin: center center;
+  z-indeX: -1;
+}
+.skew-button:after {
+  transition: all 100ms ease-out;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: skewX(-20deg) scaleX(0);
+  width: 100%;
+  height: 100%;
+  background-color: #0e3876;
+  border: 1px solid transparent;
+  z-index: 1;
+}
+.skew-button:hover span:before {
+  animation: fill 0.5s ease-out;
+  animation-fill-mode: forwards;
+}
+.skew-button:hover:after {
+  animation: swoosh 0.7s ease-in;
+}
+.skew-button:active:before {
+  background-color: #030d1b;
+}
+@keyframes swoosh {
+  0% {
+    transform-origin: left center;
+  }
+  20% {
+    transform: skewX(-20deg) scaleX(1);
+    transform-origin: left center;
+  }
+  21% {
+    transform-origin: right center;
+  }
+  50% {
+    transform: skewX(-20deg) scaleX(0);
+    transform-origin: right center;
+  }
+}
+@keyframes fill {
+  0% {
+    background-color: rgba(14, 56, 118, 0);
+  }
+  20% {
+    opacity: 0.5;
+    border-width: 15px;
+    border-color: #092248;
+  }
+  100% {
+    opacity: 0.5;
+    border-width: 1px;
+    background-color: rgba(14, 56, 118, 0.5);
+  }
+}

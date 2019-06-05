@@ -1,0 +1,31 @@
+body.bggrey {
+    background-color: white;
+  }
+  .margin {
+    margin-top: 25px;
+  }
+  .grayout {
+    opacity: .45;
+  }
+  .headingcolor {
+    color: #333;
+    background-color: lightgreen;
+    border-color: #ddd;
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+  .border {
+    border-bottom: 1px solid #ebebeb;
+    border-top: 1px solid #ebebeb;
+  }
+  .panel {
+    transition: box-shadow 200ms;
+  }
+  .panel:hover {
+    box-shadow: 2px 1px 6px 4px grey;
+  }
+  .glyphicon:after {
+    pointer-events: none;
+  }
