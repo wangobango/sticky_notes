@@ -20,12 +20,13 @@ app.use((request, response, next) => {
 });
 
 app.use(express.static('views'))
+app.set('view engine', 'pug');
 
 app.listen(3001, () => {
     console.log("Server works");
 })
 
-app.set('view engine', 'pug');
+
 app.get('/', (request, response) => {
     response.render('login.pug');
 });

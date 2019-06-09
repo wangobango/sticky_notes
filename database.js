@@ -56,12 +56,7 @@ class DatabaseHelper {
       this.db.all(sql, [], (err, rows) => {
         if (err) {
           reject(err);
-          // throw err;
         }
-        rows.forEach((row) => {
-          // console.log(row.name);
-        });
-  
         if (rows.length == 0) {
           this.db.run(`
             INSERT INTO users(name) VALUES('${login}')
